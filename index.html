@@ -1,282 +1,305 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rishikant | Robotics, AI/ML & Quant Portfolio</title>
-  <meta name="description" content="Portfolio website of Rishikant, a DTU Delhi developer focused on robotics, AI/ML research, quantitative systems, and full-stack engineering." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root, [data-theme="light"] {
-      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
-      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
-      --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
-      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
-      --color-bg: #f7f6f2; --color-surface: #f9f8f5; --color-surface-2: #fbfbf9; --color-border: #d4d1ca; --color-text: #28251d; --color-text-muted: #66645f; --color-text-faint: #9f9b93; --color-text-inverse: #f9f8f4; --color-primary: #8e2c2c; --color-primary-hover: #6d1f1f; --color-accent: #d9a441;
-      --shadow-md: 0 18px 40px rgba(0,0,0,.12); --radius-md: 0.75rem; --radius-lg: 1rem; --radius-xl: 1.4rem; --radius-full: 999px; --font-display: 'Orbitron', sans-serif; --font-body: 'Inter', system-ui, sans-serif; --content: 1180px;
-    }
-    [data-theme="dark"] {
-      --color-bg: #07090d; --color-surface: #0d1218; --color-surface-2: #131b23; --color-border: #232f39; --color-text: #edf3f8; --color-text-muted: #9aaaba; --color-text-faint: #667889; --color-text-inverse: #090d12; --color-primary: #b73a3a; --color-primary-hover: #d04b4b; --color-accent: #d4a64f; --shadow-md: 0 20px 50px rgba(0,0,0,.38);
-    }
-    *,:before,:after{box-sizing:border-box} html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased} body,h1,h2,h3,p,ul{margin:0} body{font-family:var(--font-body);font-size:var(--text-base);line-height:1.65;color:var(--color-text);min-height:100vh;background:radial-gradient(circle at 12% 18%, rgba(183,58,58,.16), transparent 22%),radial-gradient(circle at 88% 0%, rgba(212,166,79,.10), transparent 24%),linear-gradient(180deg,#0a0f15,#07090d 62%)}
-    a{color:inherit;text-decoration:none} img,svg{display:block;max-width:100%;height:auto} ul{padding:0;list-style:none} button{font:inherit;background:none;border:none} :focus-visible{outline:2px solid var(--color-accent);outline-offset:3px;border-radius:.375rem}
-    .skip-link{position:absolute;left:-999px;top:0}.skip-link:focus{left:1rem;top:1rem;background:var(--color-surface);padding:.75rem 1rem;z-index:90;border-radius:var(--radius-md)}
-    .container{width:min(calc(100% - 2rem), var(--content));margin-inline:auto}
-    .site-header{position:sticky;top:0;z-index:30;background:rgba(7,9,13,.76);backdrop-filter:blur(16px);border-bottom:1px solid rgba(237,243,248,.08)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:var(--space-4) 0;gap:var(--space-4)}
-    .brand{display:flex;align-items:center;gap:var(--space-3);font-weight:700;font-size:var(--text-sm);letter-spacing:.08em;text-transform:uppercase}
-    .brand svg{width:42px;height:42px;color:var(--color-accent)}
-    .nav-links{display:flex;gap:var(--space-4);flex-wrap:wrap;font-size:var(--text-sm);color:var(--color-text-muted)}
-    .theme-toggle{min-width:44px;min-height:44px;border-radius:var(--radius-full);display:grid;place-items:center;border:1px solid rgba(237,243,248,.1);background:rgba(255,255,255,.02)}
-    .hero{padding:clamp(4rem,10vw,8rem) 0 var(--space-16)}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--space-8);align-items:end}
-    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;padding:.5rem .85rem;border-radius:var(--radius-full);border:1px solid rgba(212,166,79,.25);background:rgba(212,166,79,.08);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.12em;color:var(--color-accent)}
-    .eyebrow:before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:var(--color-primary);box-shadow:0 0 18px rgba(183,58,58,.55)}
-    h1{font-family:var(--font-display);font-size:var(--text-3xl);line-height:1.02;letter-spacing:.02em;max-width:12ch;margin-top:var(--space-6)}
-    .lead{max-width:62ch;color:var(--color-text-muted);margin-top:var(--space-5)}
-    .hero-actions{display:flex;gap:var(--space-3);flex-wrap:wrap;margin-top:var(--space-8)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.9rem 1.2rem;border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:600;transition:.2s ease;border:1px solid transparent}
-    .btn-primary{background:linear-gradient(135deg,var(--color-primary),#8b2323);color:#fff}.btn-primary:hover{filter:brightness(1.08)}
-    .btn-secondary{background:rgba(255,255,255,.02);border-color:rgba(237,243,248,.12)}.btn-secondary:hover{border-color:rgba(212,166,79,.35);color:var(--color-accent)}
-    .hero-card,.panel,.project-card,.timeline-item,.contact-card{background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.018));border:1px solid rgba(237,243,248,.08);border-radius:var(--radius-xl);box-shadow:var(--shadow-md)}
-    .hero-card{padding:var(--space-6);position:relative;overflow:hidden}.hero-card:after{content:"";position:absolute;right:-3rem;bottom:-4rem;width:240px;height:240px;background:radial-gradient(circle, rgba(183,58,58,.18), transparent 65%)}
-    .hero-topline{font-size:var(--text-sm);color:var(--color-accent);text-transform:uppercase;letter-spacing:.18em;margin-bottom:var(--space-2)}
-    .stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-4);margin-top:var(--space-5)}
-    .stat{padding:var(--space-4);border-radius:var(--radius-lg);background:rgba(255,255,255,.025);border:1px solid rgba(237,243,248,.06)} .stat strong{display:block;font-size:var(--text-lg)} .stat span{font-size:var(--text-sm);color:var(--color-text-muted)}
-    section{padding:var(--space-10) 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:var(--space-4);margin-bottom:var(--space-6)} .section-head h2{font-size:var(--text-xl);font-family:var(--font-display);font-weight:500;letter-spacing:.04em} .section-head p{max-width:56ch;color:var(--color-text-muted)}
-    .about-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6)} .panel,.contact-card,.timeline-item,.project-card{padding:var(--space-6)}
-    .tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:var(--space-5)} .tag{padding:.5rem .8rem;border-radius:var(--radius-full);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.08em;background:rgba(183,58,58,.12);border:1px solid rgba(183,58,58,.2);color:#f2c7c7}
-    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5)} .project-card{display:flex;flex-direction:column;gap:var(--space-4)} .project-card h3,.timeline-item h3,.contact-card h3{font-size:var(--text-lg)} .project-card p,.timeline-item p,.contact-card p{color:var(--color-text-muted)}
-    .project-meta{display:flex;flex-wrap:wrap;gap:.55rem}.project-meta span{font-size:var(--text-xs);padding:.45rem .7rem;border-radius:var(--radius-full);border:1px solid rgba(237,243,248,.08);color:var(--color-text-muted)}
-    .project-links{display:flex;gap:var(--space-3);flex-wrap:wrap;margin-top:auto}.project-links a{font-size:var(--text-sm);color:var(--color-accent)}
-    .timeline{display:grid;gap:var(--space-4)} .timeline-item small{display:block;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.12em;color:var(--color-accent);margin-bottom:.55rem}
-    .contact-list{display:grid;gap:var(--space-3);margin-top:var(--space-4)} .contact-list a{color:var(--color-accent)} footer{padding:var(--space-8) 0;border-top:1px solid rgba(237,243,248,.08);font-size:var(--text-sm);color:var(--color-text-faint)}
-    @media (max-width: 980px){.hero-grid,.about-grid,.contact-grid,.projects-grid{grid-template-columns:1fr} .nav-links{display:none}}
-    @media (max-width: 640px){.container{width:min(calc(100% - 1.25rem), var(--content))}.hero{padding-top:3.25rem}.hero-actions{flex-direction:column}.btn{width:100%}.stat-grid{grid-template-columns:1fr}.section-head{flex-direction:column;align-items:flex-start}}
-    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishikant | Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <a class="skip-link" href="#content">Skip to content</a>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Homepage">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="6" y="6" width="52" height="52" rx="16" stroke="currentColor" stroke-width="3"/>
-          <path d="M20 44L32 18L44 44" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M26 33H38" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-        </svg>
-        Rishikant
-      </a>
-      <nav aria-label="Primary">
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Focus</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <img src="assets/profilepic.jpg" alt="Rishikant" class="profile-img">
+            <h1>Rishikant</h1>
+            <p class="tagline">Robotics &middot; AI/ML Researcher &middot; Quant Enthusiast &middot; Full-Stack Developer</p>
+            <div class="social-links">
+                <a href="https://github.com/Rishiii2" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rishi-kant-4b5334369/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:rishi.space2@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </header>
+
+        <!-- About -->
+        <section id="about">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <p>I am a project-driven developer currently pursuing my B.Tech in Engineering Physics at Delhi Technological University. With a strong foundation in algorithms, competitive programming, and systems thinking, I'm passionate about tackling complex engineering challenges. My core interests span AI/ML, quant trading, robotics, cyber security, and full-stack development.</p>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2><i class="fas fa-code"></i> Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skills-group">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skills-group">
+                    <h3>Frameworks & Libraries</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">ROS2</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">OpenCV</span>
+                    </div>
+                </div>
+                <div class="skills-group">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Ubuntu</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Gazebo</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">SolidWorks</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Achievements -->
+        <section id="experience">
+            <h2><i class="fas fa-award"></i> Experience & Certifications</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Software Department Member <span>Inferno (DTU) & UGV (DTU)</span></h3>
+                    <p>Contributing to core robotics and autonomous software development.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Active Member <span>Algorave (DTU) & CP Nexus (DTU)</span></h3>
+                    <p>Participating in competitive programming and algorithmic challenges.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Major League Hacking (MLH) <span>Hackathon</span></h3>
+                    <p>Developed an Integrated University Management System.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Line Following Robot Challenge <span>Invictus, DTU Techfest</span></h3>
+                    <p>Designed and built a line-following robotic system.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Kaggle Certifications <span>Machine Learning</span></h3>
+                    <p>Intro to Machine Learning & Intermediate Machine Learning.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Benstalk Olympiad <span>State Level Topper</span></h3>
+                    <p>Secured top rank in Mathematics.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2><i class="fas fa-rocket"></i> Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <h3>Autonomous-ROS2-Navigator</h3>
+                    <div class="project-tech">
+                        <span>Python</span><span>ROS2</span><span>Gazebo</span>
+                    </div>
+                    <p>Simulated mobile robot in Gazebo for waypoint-following tasks. Utilizes ROS2 navigation stack, coordinate frame transformations, and PID control algorithms.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/Autonomous_ROS2_Waypoint_Navigator" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Multimodal-Biomass-Prediction</h3>
+                    <div class="project-tech">
+                        <span>Python</span><span>PyTorch</span><span>Computer Vision</span>
+                    </div>
+                    <p>Machine learning pipeline combining satellite imagery and sensor data to estimate biomass using late-fusion neural networks and regression modeling.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/biomass-prediction-multimodal" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Campus-Operating-System</h3>
+                    <div class="project-tech">
+                        <span>React</span><span>Node.js</span><span>MongoDB</span>
+                    </div>
+                    <p>Full-stack operations platform for attendance tracking and resource coordination employing relational algebra and RESTful API principles.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/Enterprise_Campus_Operating_System" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Neural-Drone-Vision</h3>
+                    <div class="project-tech">
+                        <span>Python</span><span>PyTorch</span><span>OpenCV</span>
+                    </div>
+                    <p>Computer vision pipelines for real-time semantic segmentation on UAVs, leveraging deep convolutional neural networks (CNNs).</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/Neural_Drone_Vision_and_Segmentation" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>UAV-Telemetry-Command</h3>
+                    <div class="project-tech">
+                        <span>JavaScript</span><span>HTML/CSS</span><span>WebSockets</span>
+                    </div>
+                    <p>High-performance dashboard providing live telemetry visualization utilizing WebSocket protocols for zero-latency data streaming.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/Real-time_UAV_Telemetry_Command" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Tactical-Aerial-Combat-Sim</h3>
+                    <div class="project-tech">
+                        <span>MATLAB</span><span>Physics</span><span>Control Theory</span>
+                    </div>
+                    <p>Mathematical combat simulation testing evasion algorithms using 6-DOF kinematic equations and differential physics engines.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/Tactical_Aerial_Combat_Simulator" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Project-Mercury-UGV</h3>
+                    <div class="project-tech">
+                        <span>Robotics</span><span>ROS2</span><span>Control Systems</span>
+                    </div>
+                    <p>Navigation stacks and hardware interfaces for the ICMTC UGVC-2026 competition featuring robust control algorithms.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/mercury" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>ISRO-Luna-Site-Analytics</h3>
+                    <div class="project-tech">
+                        <span>Python</span><span>Computer Vision</span><span>3D Modeling</span>
+                    </div>
+                    <p>Digital twin and intelligence platform for autonomous lunar landing implementing spatial mapping and hazard analysis.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/LUNA_SITE_ISRO" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <!-- Additional GitHub Projects -->
+                <div class="project-card">
+                    <h3>Drone-Swarm-Simulation</h3>
+                    <div class="project-tech">
+                        <span>Python</span><span>Simulation</span>
+                    </div>
+                    <p>Simulating coordinated multi-agent drone swarms testing collision avoidance and fleet management protocols.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/Drone_swarm_simulation" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>FRIDAY-Virtual-Assistant</h3>
+                    <div class="project-tech">
+                        <span>Python</span><span>AI</span><span>Voice Control</span>
+                    </div>
+                    <p>Personal intelligent voice assistant script for automating daily desktop tasks.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/F.R.I.D.A.Y" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Hackfluence-Content-Gen</h3>
+                    <div class="project-tech">
+                        <span>TypeScript</span><span>Web App</span>
+                    </div>
+                    <p>An automated content generator designed for the Hackfluence ecosystem.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/content_generator_hackfluence" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>ESP32-Custom-Keyboard</h3>
+                    <div class="project-tech">
+                        <span>C++</span><span>Embedded</span><span>IoT</span>
+                    </div>
+                    <p>Firmware for an ESP32-based custom macro keyboard with Bluetooth capabilities.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/esp32-custom-keyboard" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Drone-YOLO-Dataset</h3>
+                    <div class="project-tech">
+                        <span>Data Science</span><span>Computer Vision</span>
+                    </div>
+                    <p>Custom annotated dataset for training YOLO object detection models optimized for drone footage.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/Drone-yolo-dataset" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Orchestrate-Evidence-Review</h3>
+                    <div class="project-tech">
+                        <span>Python</span><span>Data Processing</span>
+                    </div>
+                    <p>Multi-modal evidence review software enabling structured data interpretation.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/Multi-Modal_Evidence_Review_ORCHESTRATE" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>SAE-Study-Assistant</h3>
+                    <div class="project-tech">
+                        <span>Python</span><span>AI Tools</span>
+                    </div>
+                    <p>An intelligent study assistant utilizing LLM APIs for smart querying and note summarization.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/Study_assistant_SAE" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Expense-Tracker</h3>
+                    <div class="project-tech">
+                        <span>Python</span><span>Scripting</span>
+                    </div>
+                    <p>CLI-based personal finance utility for logging and categorizing daily expenditures.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/expense-tracker" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Weather-Dashboard</h3>
+                    <div class="project-tech">
+                        <span>JavaScript</span><span>API Integration</span>
+                    </div>
+                    <p>Responsive web dashboard displaying real-time weather metrics using public REST APIs.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Rishiii2/weather-dashboard" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Rishikant. Designed and built with minimal aesthetics.</p>
+        </footer>
     </div>
-  </header>
-
-  <main id="content">
-    <section class="hero" id="top">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">Robotics · AI/ML Researcher · Quant Enthusiast</span>
-          <h1>Engineering the Future, One Bold Idea at a Time.</h1>
-          <p class="lead">I’m Rishikant, a DTU Delhi builder driven by curiosity across robotics, machine learning, quantitative systems, and full-stack development. Inspired by the bold, hands-on spirit of Iron Man, I like taking ambitious ideas, learning fast, and turning them into practical systems that actually run.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">Explore projects</a>
-            <a class="btn btn-secondary" href="#contact">Contact me</a>
-          </div>
-        </div>
-        <aside class="hero-card" aria-label="Highlights">
-          <img src="./assets/profile.jpg" alt="Portrait of Rishikant" width="720" height="900" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:1rem;margin-bottom:1rem;border:1px solid rgba(237,243,248,.08);" />
-          <div class="hero-topline">Mission profile</div>
-          <p style="color:var(--color-text-muted)">Dark, focused, and future-facing engineering across software, intelligent systems, and experimentation.</p>
-          <div class="stat-grid">
-            <div class="stat"><strong>DTU</strong><span>Based in Delhi and building across disciplines</span></div>
-            <div class="stat"><strong>ROS2</strong><span>Robotics simulation and waypoint workflows</span></div>
-            <div class="stat"><strong>React / Node</strong><span>Full-stack product development</span></div>
-            <div class="stat"><strong>AI + Quant</strong><span>Research-oriented technical curiosity</span></div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>About</h2>
-            <p>This portfolio is built to present both technical breadth and the mindset behind the work.</p>
-          </div>
-        </div>
-        <div class="about-grid">
-          <article class="panel">
-            <p>I’m a relentless learner and explorer, driven by a strong curiosity to work across machine learning, robotics, web development, and quantitative problem solving. I enjoy diving into unfamiliar systems, understanding how they work from the ground up, and pushing them toward real-world applications through code, debugging, and iteration.</p>
-            <div class="tags" aria-label="Skills">
-              <span class="tag">Robotics</span><span class="tag">AI/ML</span><span class="tag">Quant</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">ROS2</span><span class="tag">Research</span>
-            </div>
-          </article>
-          <article class="panel">
-            <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-3)">Current direction</h3>
-            <p>I want to grow into the kind of engineer who can connect advanced research, software systems, and product execution. Whether the problem is a robot following waypoints in simulation, a university system integrating workflows, or a machine learning model being refined, I’m interested in building things that move from idea to implementation.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Projects</h2>
-            <p>Your current projects already show a good mix of robotics and full-stack product thinking, even before adding a third major build.</p>
-          </div>
-        </div>
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-meta"><span>Robotics</span><span>ROS2</span><span>Gazebo</span></div>
-            <h3>Autonomous ROS2 Waypoint Navigator</h3>
-            <p>A robust ROS2 robotics simulation deploying complex navigational autonomy. By leveraging Gazebo physics and custom waypoint-following algorithms, the system achieves precise path execution and dynamic environment adaptation.</p>
-            <div class="project-links">
-              <a href="https://github.com/Rishiii2/waypoint_follower_robot" target="_blank" rel="noopener noreferrer">GitHub repo</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-meta"><span>Full-stack</span><span>JavaScript</span><span>Architecture</span></div>
-            <h3>Enterprise Campus Operating System</h3>
-            <p>A comprehensive full-stack platform re-architecting university infrastructure. It seamlessly integrates attendance tracking, resource allocation, and real-time campus workflows into a highly optimized ecosystem.</p>
-            <div class="project-links">
-              <a href="https://github.com/Rishiii2/hacked-is_Integrated-university-attendance-and-resource-management-software" target="_blank" rel="noopener noreferrer">GitHub repo</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-meta"><span>Computer Vision</span><span>AI/ML</span><span>Python</span></div>
-            <h3>Neural Drone Vision & Segmentation</h3>
-            <p>Advanced deep learning models engineered to perform real-time, pixel-perfect semantic segmentation for autonomous aerial vehicles. Designed with scalable Python pipelines, it empowers drones with acute spatial awareness and scene understanding.</p>
-            <div class="project-links">
-              <a href="https://github.com/Rishiii2/Drone-Segmentation-AI" target="_blank" rel="noopener noreferrer">GitHub repo</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-meta"><span>Telemetry</span><span>Dashboard</span><span>JavaScript</span></div>
-            <h3>Real-time UAV Telemetry Command</h3>
-            <p>A high-performance command center providing live telemetry, responsive data visualization, and tactical oversight for drone fleets. Built to deliver mission-critical intelligence with zero latency and interactive insights.</p>
-            <div class="project-links">
-              <a href="https://github.com/Rishiii2/Drone-dashboard" target="_blank" rel="noopener noreferrer">GitHub repo</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-meta"><span>Simulation</span><span>Physics</span><span>MATLAB</span></div>
-            <h3>Tactical Aerial Combat Simulator</h3>
-            <p>A rigorous mathematical combat simulation modeled in MATLAB, testing complex evasion and pursuit algorithms for unmanned aerial vehicles. It provides a robust physics engine for evaluating high-stakes tactical maneuvers.</p>
-            <div class="project-links">
-              <a href="https://github.com/Rishiii2/Drone-combat-sim" target="_blank" rel="noopener noreferrer">GitHub repo</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-meta"><span>UGV</span><span>Competition</span><span>Hardware</span></div>
-            <h3>Project Mercury: ICMTC UGVC-2026</h3>
-            <p>The official repository powering our Unmanned Ground Vehicle for the prestigious ICMTC UGVC-2026 competition. Features comprehensive navigation stacks, hardware interfacing, and robust control algorithms.</p>
-            <div class="project-links">
-              <a href="https://github.com/Rishiii2/mercury" target="_blank" rel="noopener noreferrer">GitHub repo</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Focus</h2>
-            <p>This section frames your portfolio around the type of engineer you are becoming.</p>
-          </div>
-        </div>
-        <div class="timeline">
-          <article class="timeline-item">
-            <small>Robotics systems</small>
-            <h3>Simulation, autonomy, and ROS2 workflows</h3>
-            <p>Your robotics work points toward a serious interest in simulation-driven experimentation, package-based workflows, and practical autonomy problems inside ROS2 and Gazebo environments.</p>
-          </article>
-          <article class="timeline-item">
-            <small>Product engineering</small>
-            <h3>Full-stack systems for real users</h3>
-            <p>The university management project highlights a systems mindset: combining multiple workflows into one product and thinking beyond isolated features toward usable structure and coordination.</p>
-          </article>
-          <article class="timeline-item">
-            <small>Research mindset</small>
-            <h3>AI/ML and quant curiosity</h3>
-            <p>Your profile is strongest when presented as someone who moves between implementation and exploration, combining software building with research-oriented learning in AI/ML and quantitative problem solving.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Contact</h2>
-            <p>These are your current profile and contact details for the portfolio.</p>
-          </div>
-        </div>
-        <div class="contact-grid">
-          <article class="contact-card">
-            <h3>Reach me</h3>
-            <div class="contact-list">
-              <p>Email: <a href="mailto:rishi.space2@gmail.com">rishi.space2@gmail.com</a></p>
-              <p>Phone: <a href="tel:+919205108705">+91 9205108705</a></p>
-              <p>Location: DTU, Delhi</p>
-              <p>GitHub: <a href="https://github.com/Rishiii2" target="_blank" rel="noopener noreferrer">github.com/Rishiii2</a></p>
-              <p>LinkedIn: <a href="https://www.linkedin.com/in/rishi-kant-4b5334369/" target="_blank" rel="noopener noreferrer">linkedin.com/in/rishi-kant-4b5334369/</a></p>
-            </div>
-          </article>
-          <article class="contact-card">
-            <h3>Portfolio note</h3>
-            <p>You do not have a deployed portfolio URL yet. Once this file is published on GitHub Pages, Netlify, or Vercel, the live deployment link will become your portfolio website URL for resumes, applications, and LinkedIn.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">Built for Rishikant with a dark professional aesthetic and subtle Iron Man-inspired color accents.</div>
-  </footer>
-
-  <script>
-    (function(){
-      const btn = document.querySelector('[data-theme-toggle]');
-      const root = document.documentElement;
-      let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.setAttribute('data-theme', theme);
-      const render = () => {
-        btn.innerHTML = theme === 'dark'
-          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-        btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-      };
-      render();
-      btn.addEventListener('click', () => {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', theme);
-        render();
-      });
-    })();
-  </script>
 </body>
 </html>
