@@ -3,7 +3,7 @@ export const personal = {
   tagline: "Engineering Physics @ DTU",
   bio: "First-year B.Tech student at Delhi Technological University building at the intersection of autonomous systems, 5G communications, and deep learning. I work with ROS2 drone swarms, IRS/RIS wireless research, and multi-agent AI — and I ship projects that actually run.",
   location: "Delhi, India",
-  email: "rishiii2@github.com",
+  email: "rishi.space2@gmail.com",
   links: {
     github:    "https://github.com/Rishiii2",
     linkedin:  "https://www.linkedin.com/in/rishikant-4b5334369/",

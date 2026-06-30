@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Instagram, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Twitter, Instagram, ExternalLink, Mail } from "lucide-react";
 import { personal } from "@/data/portfolio";
 
 const socials = [
@@ -29,6 +29,13 @@ export default function Contact() {
             Open to internships, research collaborations, and interesting problems.
             Reach out — I read everything.
           </p>
+
+          <a
+            href={`mailto:${personal.email}`}
+            className="inline-block mt-6 font-mono text-cyan text-lg sm:text-xl border-b border-cyan/30 hover:border-cyan transition-colors"
+          >
+            {personal.email}
+          </a>
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {socials.map((s) => (
