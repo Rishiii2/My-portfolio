@@ -276,6 +276,7 @@ export const certifications = [
   { name: "Use AI Responsibly",                       issuer: "Google", date: "Jun 2026" },
   { name: "Discover the Art of Prompting",            issuer: "Google", date: "Jun 2026" },
   { name: "Start Writing Prompts like a Pro",         issuer: "Google", date: "Jun 2026" },
+  { name: "Use AI as a Creative or Expert Partner",   issuer: "Google", date: "Jun 2026" },
   { name: "Maximize Productivity With AI Tools",      issuer: "Google", date: "Jun 2026" },
   { name: "Getting Started with AI on Jetson Nano",   issuer: "NVIDIA DLI", date: "Jun 2026" },
   { name: "Microsoft Azure Administrator",            issuer: "Microsoft", date: "Jun 2026" },
