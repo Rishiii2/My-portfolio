@@ -19,7 +19,7 @@ export default function Certifications() {
         >
           <span className="section-label">07 / Certifications</span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mt-3">
-            27 credentials, one obsession
+            {certifications.length} credentials, one obsession
           </h2>
         </motion.div>
 

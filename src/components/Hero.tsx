@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin } from "lucide-react";
-import { personal } from "@/data/portfolio";
+import { personal, certifications } from "@/data/portfolio";
 
 const ROLES = [
   "Robotics Engineer",
@@ -309,7 +309,7 @@ export default function Hero() {
             ["4", "Active Internships"],
             ["23+", "GitHub Repos"],
             ["8", "Hackathons"],
-            ["27", "Certifications"],
+            [certifications.length.toString(), "Certifications"],
           ].map(([num, label]) => (
             <div key={label}>
               <div className="font-display font-bold text-2xl text-white">{num}</div>
