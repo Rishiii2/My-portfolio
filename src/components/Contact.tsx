@@ -1,66 +1,49 @@
-"use client";
-import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Instagram, ExternalLink, Mail } from "lucide-react";
-import { personal } from "@/data/portfolio";
+import Reveal from "./ui/Reveal";
+import { interests, personal } from "@/data/portfolio";
 
-const socials = [
-  { label: "GitHub",    href: personal.links.github,    icon: Github },
-  { label: "LinkedIn",  href: personal.links.linkedin,  icon: Linkedin },
-  { label: "X / Twitter", href: personal.links.twitter,  icon: Twitter },
-  { label: "Instagram", href: personal.links.instagram, icon: Instagram },
+const SOCIALS: { label: string; href: string }[] = [
+  { label: "GITHUB", href: personal.links.github },
+  { label: "LINKEDIN", href: personal.links.linkedin },
+  { label: "HASHNODE", href: personal.links.hashnode },
+  { label: "LEETCODE", href: personal.links.leetcode },
+  { label: "X", href: personal.links.twitter },
+  { label: "CHESS", href: personal.links.chess },
 ];
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-32 px-6 border-t border-white/5 relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid bg-[length:40px_40px] opacity-50 pointer-events-none" />
+    <section className="section contact" id="contact">
+      <Reveal>
+        <h2>
+          LET&apos;S BUILD
+          <br />
+          <span className="stroke">SOMETHING</span>
+        </h2>
 
-      <div className="max-w-4xl mx-auto text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <p>
+          Open to research collaborations, autonomy and wireless internships, and anything involving
+          swarms, surfaces, or agents that actually have to work.
+        </p>
+
+        <a className="mail" href={`mailto:${personal.email}`}>
+          {personal.email}
+        </a>
+
+        <div className="socials">
+          {SOCIALS.map((s) => (
+            <a className="soc" key={s.label} href={s.href} target="_blank" rel="noopener noreferrer">
+              {s.label}
+            </a>
+          ))}
+        </div>
+
+        <p
+          className="font-mono"
+          style={{ fontSize: "10.5px", color: "var(--ink-mute)", marginTop: 34, letterSpacing: ".08em" }}
         >
-          <span className="section-label">09 / Contact</span>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl text-white mt-4 leading-tight">
-            Let's build something<br /><span className="text-cyan">that ships.</span>
-          </h2>
-          <p className="text-slate text-base mt-6 max-w-md mx-auto">
-            Open to internships, research collaborations, and interesting problems.
-            Reach out — I read everything.
-          </p>
-
-          <a
-            href={`mailto:${personal.email}`}
-            className="inline-block mt-6 font-mono text-cyan text-lg sm:text-xl border-b border-cyan/30 hover:border-cyan transition-colors"
-          >
-            {personal.email}
-          </a>
-
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
-            {socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank" rel="noopener noreferrer"
-                className="group flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-slate hover:text-white hover:border-cyan/40 transition-colors"
-              >
-                <s.icon size={16} />
-                <span className="text-sm font-mono">{s.label}</span>
-                <ExternalLink size={12} className="opacity-0 group-hover:opacity-60 transition-opacity" />
-              </a>
-            ))}
-          </div>
-
-          <div className="mt-12 flex flex-wrap justify-center gap-4 text-xs font-mono text-slate-2">
-            <a href={personal.links.leetcode} target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors">LeetCode</a>
-            <span>·</span>
-            <a href={personal.links.hashnode} target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors">Hashnode</a>
-            <span>·</span>
-            <a href={personal.links.chess} target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors">Chess.com</a>
-          </div>
-        </motion.div>
-      </div>
+          {interests.join("  ·  ")}
+        </p>
+      </Reveal>
     </section>
   );
 }

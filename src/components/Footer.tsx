@@ -1,9 +1,29 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export default function Footer() {
+  const [clock, setClock] = useState("—");
+
+  useEffect(() => {
+    const tick = () =>
+      setClock(
+        `IST ${new Date().toLocaleTimeString("en-GB", {
+          timeZone: "Asia/Kolkata",
+          hour12: false,
+        })}`
+      );
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
-    <footer className="py-8 px-6 border-t border-white/5">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-slate-2">
-        <span>© {new Date().getFullYear()} Rishikant. Built with Next.js & Tailwind.</span>
-        <span>Designed and engineered from Delhi, India 🇮🇳</span>
+    <footer className="foot-wrap">
+      <div className="foot">
+        <span>© {new Date().getFullYear()} RISHIKANT · ENGINEERING PHYSICS, DTU</span>
+        <span>{clock}</span>
+        <span>BUILT WITH NEXT.JS · TAILWIND · CANVAS</span>
       </div>
     </footer>
   );
