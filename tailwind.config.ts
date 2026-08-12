@@ -1,5 +1,8 @@
 import type { Config } from "tailwindcss";
 
+/* The visual system lives in src/app/globals.css as plain CSS custom
+   properties. Tailwind is kept for layout utilities only; these tokens
+   mirror the CSS variables so utility classes stay on-palette. */
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,45 +12,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        space:   "#060B18",
-        navy:    "#0D1B2A",
-        "navy-2":"#0F2236",
-        cyan:    "#00D4FF",
-        "cyan-dim":"#00A8CC",
-        amber:   "#F59E0B",
-        slate:   "#94A3B8",
-        "slate-2":"#64748B",
-        muted:   "#1E293B",
+        void: "#05070A",
+        panel: "#0A0E14",
+        "panel-2": "#0D131B",
+        line: "#18212C",
+        "line-hot": "#22303F",
+        ink: "#E8EFF6",
+        "ink-dim": "#94A6B8",
+        "ink-mute": "#5E6E7F",
+        cyan: "#22D3EE",
+        "cyan-dim": "#0E7490",
+        amber: "#FFB020",
+        green: "#3DDC97",
       },
       fontFamily: {
-        display: ["Space Grotesk", "sans-serif"],
-        body:    ["Inter", "sans-serif"],
-        mono:    ["JetBrains Mono", "monospace"],
-      },
-      backgroundImage: {
-        "grid-pattern": "radial-gradient(circle, #00D4FF15 1px, transparent 1px)",
-      },
-      backgroundSize: {
-        "grid": "40px 40px",
-      },
-      animation: {
-        "fade-up":    "fadeUp 0.6s ease forwards",
-        "pulse-slow": "pulse 3s ease-in-out infinite",
-        "spin-slow":  "spin 8s linear infinite",
-        "glow":       "glow 2s ease-in-out infinite alternate",
-      },
-      keyframes: {
-        fadeUp: {
-          "0%":   { opacity: "0", transform: "translateY(20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        glow: {
-          "0%":   { boxShadow: "0 0 5px #00D4FF40" },
-          "100%": { boxShadow: "0 0 20px #00D4FF80, 0 0 40px #00D4FF40" },
-        },
+        display: ["Space Grotesk", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "monospace"],
       },
     },
   },
   plugins: [],
 };
+
 export default config;

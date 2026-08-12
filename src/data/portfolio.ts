@@ -1,307 +1,496 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Single source of truth for every piece of content on the site.
+   Edit here — components read from this file and never hardcode copy.
+   ───────────────────────────────────────────────────────────────────────── */
+
 export const personal = {
   name: "Rishikant",
-  tagline: "Engineering Physics @ DTU",
-  bio: "First-year B.Tech student at Delhi Technological University building at the intersection of autonomous systems, 5G communications, and deep learning. I work with ROS2 drone swarms, IRS/RIS wireless research, and multi-agent AI — and I ship projects that actually run.",
+  first: "RISHI",
+  last: "KANT",
+  degree: "Engineering Physics",
+  school: "Delhi Technological University",
+  years: "2025 – 2029",
   location: "Delhi, India",
   email: "rishi.space2@gmail.com",
+  tagline:
+    "Engineering Physics @ DTU. Autonomous drone swarms, reconfigurable intelligent surfaces for 5G, and reinforcement learning.",
   links: {
-    github:    "https://github.com/Rishiii2",
-    linkedin:  "https://www.linkedin.com/in/rishikant-4b5334369/",
-    twitter:   "https://x.com/it_is_rishii",
-    hashnode:  "https://hashnode.com/@rishiii2",
-    instagram: "https://www.instagram.com/it.is.rishii/",
-    leetcode:  "https://leetcode.com/u/itisrishii/",
-    portfolio: "https://rishiii2.github.io/My-portfolio",
-    chess:     "https://chess.com/member/rishiiii001",
+    github: "https://github.com/Rishiii2",
+    linkedin: "https://www.linkedin.com/in/rishikant-4b5334369/",
+    hashnode: "https://rishiii2.hashnode.dev",
+    leetcode: "https://leetcode.com/u/itisrishii/",
+    twitter: "https://x.com/it_is_rishii",
+    chess: "https://www.chess.com/member/rishiiii001",
   },
 };
 
-export const skills = [
-  {
-    category: "AI / Machine Learning",
-    icon: "🤖",
-    items: ["PyTorch", "TensorFlow", "Scikit-learn", "YOLOv8", "EfficientNet-B0", "LTN", "RDKit", "OpenCV", "Cognee", "HuggingFace"],
-  },
-  {
-    category: "Robotics & Autonomy",
-    icon: "🤖",
-    items: ["ROS2 Humble/Jazzy", "Gazebo Harmonic", "ArduPilot SITL", "Nav2", "URDF/Xacro", "RViz", "ORCA", "DeepSORT", "MAVLink"],
-  },
-  {
-    category: "5G & Wireless Comms",
-    icon: "📡",
-    items: ["IRS/RIS", "BD-RIS", "STAR-RIS", "ISAC", "O-RAN xApp", "SWIPT", "NTN", "OFDM", "MUSIC Algorithm", "Beamforming"],
-  },
-  {
-    category: "Languages",
-    icon: "💻",
-    items: ["Python", "C++", "MATLAB", "JavaScript", "TypeScript", "Bash", "HTML/CSS"],
-  },
-  {
-    category: "MLOps & Cloud",
-    icon: "☁️",
-    items: ["Microsoft Azure", "Git/GitHub", "Docker", "Streamlit", "Linux", "Jupyter", "Weights & Biases", "VS Code"],
-  },
-  {
-    category: "Hardware & Embedded",
-    icon: "🔧",
-    items: ["NVIDIA Jetson Nano", "PCB Design (KiCad)", "ESP32", "Raspberry Pi", "Breadboard Prototyping"],
-  },
-  {
-    category: "Web & Misc",
-    icon: "🌐",
-    items: ["Next.js", "Node.js", "WebSocket", "REST APIs", "Cytoscape.js", "Three.js", "LaTeX"],
-  },
+/** Typewriter lines in the hero. `hot` renders in the accent colour. */
+export const heroLines: { hot?: string; text: string }[] = [
+  { text: "engineering physics @ delhi technological university" },
+  { hot: "autonomous drone swarms", text: " · ros 2 · deepsort · hungarian assignment" },
+  { hot: "reconfigurable intelligent surfaces", text: " for 5g · bd-ris · isac" },
+  { hot: "deep + reinforcement learning", text: " · ppo · behavioural cloning" },
 ];
 
-export const experience = [
+export const stats: { value: number; label: string }[] = [
+  { value: 4, label: "Papers" },
+  { value: 8, label: "Roles" },
+  { value: 23, label: "Repos" },
+  { value: 11, label: "Hackathons" },
+  { value: 36, label: "Articles" },
+];
+
+/* ── RESEARCH ──────────────────────────────────────────────────────────── */
+
+export type TeleRow = { label: string; value: string; width: number; tone: "hot" | "amber" | "grey" };
+
+export type Paper = {
+  title: string;
+  status: string;
+  statusTone: "prep" | "venue" | "live";
+  sub: string;
+  body: string[];
+  chips: string[];
+  hotChips?: string[];
+  repo?: { label: string; href: string };
+  telemetry?: { rows: TeleRow[]; caption: string; captionHot: string };
+};
+
+export const papers: Paper[] = [
   {
-    title: "Intern — 5G Lab",
-    org: "Department of Telecommunications (DoT) · Govt. of India",
-    period: "Jun 2026 – Present",
-    type: "Research",
-    bullets: [
-      "Exploring 5G architecture, spectrum & IRS/RIS under Prof. Kaustubh Ranjan Singh at DTU's 5G Use Case Lab.",
-      "Co-authored 14-page research compendium: BD-RIS, Multi-hop IRS, IRS-ISAC Digital Twin, RIS-SWIPT — targeting IEEE WCNC/ICC 2027.",
-      "Ranked 3rd among all 1st-year students in the 5G Lab Internship assessment.",
+    title: "Intent Modelling in Large Language Models",
+    status: "In preparation",
+    statusTone: "prep",
+    sub: "Inferring latent human intent from observed decisions",
+    body: [
+      "Gives a language model an explicit representation of the goal structure behind observed behaviour — reading a person's underlying intent from the decisions they actually take, rather than from the instruction they happen to state.",
+      "Extends a line of three NeurIPS 2024 results on decision-grounded intent inference.",
     ],
-    tags: ["IRS/RIS", "BD-RIS", "O-RAN", "ISAC", "5G NR"],
-    highlight: true,
+    hotChips: ["NeurIPS lineage"],
+    chips: ["LLM alignment", "Intent inference", "Decision modelling"],
   },
   {
-    title: "Machine Learning Intern",
-    org: "FlyRank AI · Remote",
-    period: "Jun 2026 – Present",
-    type: "Industry",
-    bullets: ["Developing and optimising ML pipelines for production AI features at an AI-first startup."],
-    tags: ["PyTorch", "Scikit-learn", "Python"],
+    title: "Hybrid Autonomous Racing — Deep Learning + RL for F1 Path Planning",
+    status: "In preparation",
+    statusTone: "prep",
+    sub: "Autonomous driving stack for Formula 1 and Formula Student Driverless",
+    body: [
+      "Two-stage neural policy: behavioural cloning on real F1 expert telemetry (FastF1 — Verstappen, Miami GP qualifying), then PPO reinforcement-learning fine-tuning for tyre slip-angle optimisation.",
+      "Colour-blind track reconstruction via Delaunay triangulation and Voronoi dual width-gating recovers the centreline without cone-colour dependence; the minimum-curvature racing line is solved as a quadratic program in OSQP, and an upgraded Stanley controller with yaw damping and PT2 lag compensation closes the loop at 100 Hz.",
+    ],
+    telemetry: {
+      rows: [
+        { label: "HYBRID RL", value: "46.85 s", width: 100, tone: "hot" },
+        { label: "F1 EXPERT REF", value: "47.30 s", width: 99, tone: "amber" },
+        { label: "GEOMETRIC", value: "49.85 s", width: 94, tone: "grey" },
+        { label: "DEEP LEARNING", value: "52.40 s", width: 89, tone: "grey" },
+      ],
+      caption: "72.9 km/h average · 1.85 g lateral · ",
+      captionHot: "0% collision rate",
+    },
+    hotChips: ["PPO"],
+    chips: ["Behavioural cloning", "Delaunay triangulation", "OSQP / QP", "Stanley control", "ROS 2 · Gazebo"],
+    repo: { label: "github.com/Rishiii2/F1-PATH-PLANNING", href: "https://github.com/Rishiii2/F1-PATH-PLANNING" },
   },
   {
-    title: "Special Projects Intern",
-    org: "VAJRON Global Tech Pvt. Ltd. · Hybrid, Noida",
-    period: "May 2026 – Present",
-    type: "Industry",
-    bullets: ["Cross-functional role in AI/ML, Computer Vision & Autonomous Mechatronics on live industry projects."],
-    tags: ["YOLOv8", "ROS2", "OpenCV", "Drones"],
+    title: "Reconfigurable Intelligent Surfaces for Next-Generation 5G",
+    status: "Targeting IEEE WCNC / ICC 2027",
+    statusTone: "venue",
+    sub: "Co-authored with Prof. Kaustubh Ranjan Singh · DTU 5G Use Case Lab, Dept. of Telecommunications",
+    body: [
+      "A 14-page technical compendium covering beyond-diagonal RIS, multi-hop IRS, the IRS–ISAC digital twin, and RIS-SWIPT — built on cascaded channel modelling, SINR optimisation, Cramér–Rao bound analysis, and alternating optimisation solved via semidefinite relaxation and ADMM.",
+    ],
+    hotChips: ["BD-RIS"],
+    chips: ["IRS–ISAC", "RIS-SWIPT", "Cramér–Rao bound", "SDR / ADMM", "Beamforming"],
   },
   {
-    title: "Open-Source Contributor",
-    org: "GSSoC JEC Jabalpur · Remote",
-    period: "May 2026 – Present",
-    type: "Open Source",
-    bullets: ["Fixed 2 production bugs in Cognee (graph-based RAG framework) during The Hangover Part II Hackathon."],
-    tags: ["Python", "Cognee", "Graph RAG"],
-  },
-];
-
-export const projects = [
-  {
-    title: "LUNA-SITE",
-    subtitle: "Lunar Ice Detection & Site Selection",
-    desc: "Autonomous south polar ice detection system for Chandrayaan-4. Physics-regularised CNN with Grad-CAM, DFSAR CPR/DOP ice criterion, NSGA-II Pareto optimiser, Bekker terramechanics RRT* planner, and a 6-panel Streamlit dashboard.",
-    tags: ["Python", "PyTorch", "NSGA-II", "RRT*", "Streamlit", "Grad-CAM"],
-    category: "AI/ML + Space",
-    github: "https://github.com/Rishiii2",
-    featured: true,
-    badge: "🛸 ISRO BAH 2026",
-  },
-  {
-    title: "Tactical Aerial Combat Simulator",
-    subtitle: "Multi-Agent Drone Swarm",
-    desc: "2D multi-agent drone swarm with Kalman filter, DeepSORT, Hungarian algorithm, ORCA, Visual Servoing, and dual-zone YOLO hazard mapping. Ported to an 18-file ROS2 Python package for Humble + ArduPilot SITL.",
-    tags: ["MATLAB", "ROS2", "ArduPilot", "YOLO", "Kalman", "RRT*"],
-    category: "Robotics",
-    github: "https://github.com/Rishiii2/Tactical_Aerial_Combat_Simulator",
-    featured: true,
-  },
-  {
-    title: "Lore",
-    subtitle: "Developer Institutional Knowledge Engine",
-    desc: "Institutional knowledge engine built with Cognee graph memory/RAG. Animated Cytoscape.js multi-hop traversal, intent-based reasoning, 42% developer ramp-up reduction. Also fixed 2 bugs in Cognee's OSS repo. Rated 9.4/10.",
-    tags: ["Cognee", "Cytoscape.js", "Python", "Graph RAG"],
-    category: "AI/ML",
-    github: "https://github.com/Rishiii2",
-    featured: true,
-    badge: "⭐ 9.4/10",
-  },
-  {
-    title: "mercury",
-    subtitle: "Autonomous Rover — ICMTC UGVC-2026",
-    desc: "Full AI autonomous driving stack: YOLOv8 lane/pothole detection, behavioral cloning with EfficientNet-B0, AI costmap bridge for Nav2, and closed-loop Gazebo Harmonic track world.",
-    tags: ["YOLOv8", "EfficientNet-B0", "ROS2 Nav2", "Gazebo"],
-    category: "Robotics",
-    github: "https://github.com/Rishiii2",
-  },
-  {
-    title: "Operation MINT",
-    subtitle: "Multi-Agent AI Drug Discovery",
-    desc: "Money Heist themed 5-agent drug discovery pipeline (RIO/TOKYO/BERLIN/NAIROBI/EL PROFESOR). PyTorch MLP toxicity classifier, RDKit Morgan fingerprints, Stanford ClinTox dataset, BioGRID/STRING PPI networks.",
-    tags: ["PyTorch", "RDKit", "BioGRID", "Multi-Agent"],
-    category: "AI/ML",
-    github: "https://github.com/Rishiii2",
-  },
-  {
-    title: "biomass-prediction-multimodal",
-    subtitle: "Neuro-Symbolic AI · AIMS DTU Internship",
-    desc: "Multi-modal DL combining image features + agronomic tabular metadata with Logical Tensor Networks enforcing 5 biological fuzzy axioms (Satisfaction=0.950). Predicts pasture biomass from multi-sensor data.",
-    tags: ["EfficientNet-B0", "LTN", "PyTorch", "Multi-modal"],
-    category: "AI/ML",
-    github: "https://github.com/Rishiii2/biomass-prediction-multimodal",
-  },
-  {
-    title: "Drone Swarm Simulation",
-    subtitle: "ROS2 Jazzy + Ubuntu 24",
-    desc: "ROS2-based drone swarm simulation package for ROS2 Jazzy + Ubuntu 24. Parallel autonomous swarm architecture separate from the MATLAB tactical simulator.",
-    tags: ["ROS2 Jazzy", "Python", "Ubuntu 24", "ArduPilot"],
-    category: "Robotics",
-    github: "https://github.com/Rishiii2/Drone_swarm_simulation",
-  },
-  {
-    title: "Multi-Modal Insurance Claim Verifier",
-    subtitle: "HackerRank Orchestrate · Rank #1061",
-    desc: "4-agent orchestration pipeline (Vision · NLP · Risk · Aggregator) to auto-verify insurance claims end-to-end. Built and deployed within 24 hours.",
-    tags: ["Python", "Multi-Agent", "Vision", "NLP"],
-    category: "AI/ML",
-    github: "https://github.com/Rishiii2",
-    badge: "🏆 Rank #1061",
-  },
-  {
-    title: "IRS-RIS 5G Research Compendium",
-    subtitle: "IEEE WCNC/ICC 2027 Target",
-    desc: "14-page professor presentation covering IRS-ISAC Digital Twin, BD-RIS, Multi-hop IRS & RIS-SWIPT. Cascaded channel model, SINR, CRB, alternating optimisation, SDR/ADMM, MUSIC algorithm.",
-    tags: ["MATLAB", "Python", "IRS/RIS", "5G Research"],
-    category: "Research",
-    github: "https://github.com/Rishiii2",
-  },
-  {
-    title: "Enterprise Campus Operating System",
-    subtitle: "Full-Stack Web Platform",
-    desc: "Platform to organise all campus happenings and provide a unified marketplace for college events, clubs, and services.",
-    tags: ["JavaScript", "Node.js", "Full-Stack"],
-    category: "Web",
-    github: "https://github.com/Rishiii2/Enterprise_Campus_Operating_System",
+    title: "Machine Learning for Human-Body Physics",
+    status: "Ongoing",
+    statusTone: "live",
+    sub: "Physics-informed modelling of human-body dynamics in MATLAB",
+    body: [
+      "Integrating learned models with first-principles physical modelling of the human body. Research active.",
+    ],
+    chips: ["MATLAB", "Physics-informed ML", "Biomechanics"],
   },
 ];
 
-export const hackathons = [
+/* ── EXPERIENCE ────────────────────────────────────────────────────────── */
+
+export type Job = {
+  role: string;
+  flag?: string;
+  when: string;
+  org: string;
+  bullets: string[];
+  skills?: string;
+};
+
+export const jobs: Job[] = [
   {
-    name: "BAH 2026 — ISRO Bharatiya Antariksh Hackathon",
-    subtitle: "Team LUNA-SITE · Challenge 8 · National Level",
-    desc: "Autonomous lunar south polar ice detection for Chandrayaan-4.",
-    date: "Jun 2026",
-    badge: "🛸 National",
+    role: "Research Intern — 5G Lab, Dept. of Telecommunications, Govt. of India",
+    when: "JUN 2026 — PRESENT",
+    org: "On-site, Delhi · DTU 5G Use Case Lab",
+    bullets: [
+      "5G architecture, spectrum technologies, and reconfigurable intelligent surfaces under Prof. Kaustubh Ranjan Singh, alongside industry and government engineers.",
+      "Co-authored a 14-page research compendium on BD-RIS, multi-hop IRS, IRS–ISAC digital twin, and RIS-SWIPT — targeting IEEE WCNC/ICC 2027.",
+      "Certificate of Merit for 3rd position in the quiz competition of the two-week programme “5G and Beyond: Foundations of Next-Generation Wireless Communications”.",
+    ],
+    skills: "IRS/RIS · BD-RIS · ISAC · O-RAN xApp · SWIPT · NTN · OFDM · MUSIC algorithm · Beamforming",
   },
   {
-    name: "The Hangover Part II Hackathon",
-    subtitle: "Project: Lore · Rated 9.4/10 · Fixed 2 Cognee OSS bugs",
-    desc: "Developer institutional knowledge engine using Cognee graph memory/RAG.",
-    date: "Jun 2026",
-    badge: "⭐ 9.4/10",
+    role: "Algorithm Design & Autonomous UAV Intern — DTU, ECE",
+    flag: "DEFENCE",
+    when: "MAY — JUL 2026",
+    org: "On-site, Delhi · Advisor: Prof. Rajiv Kapoor",
+    bullets: [
+      "Engineered Project AeroGuard AI, a tactical drone-swarm surveillance system developed for the Indian Military — 6 distinct sub-systems.",
+      "Implemented the Dynamic Window Approach for real-time UAV collision avoidance in simulated combat airspace; built the core tactical aerial combat simulator in MATLAB.",
+      "Persistent multi-target tracking across the swarm's shared vision network using DeepSORT and Kalman filters; swarm logic and tactical resource allocation optimised with the Munkres (Hungarian) assignment algorithm.",
+      "Delivered YOLOv8 military-vehicle detection datasets, neural drone-vision segmentation models, and a real-time UAV telemetry command dashboard.",
+    ],
+    skills: "MATLAB · DWA · DeepSORT · Kalman filtering · Hungarian algorithm · YOLOv8 · Sensor integration",
   },
   {
-    name: "HackerRank Orchestrate",
-    subtitle: "Multi-Modal Insurance Claim Verifier · Rank #1061",
-    desc: "4-agent AI pipeline to auto-verify insurance claims, built in 24 hrs.",
-    date: "Jun 2026",
-    badge: "🏆 #1061",
+    role: "Machine Learning Engineering Intern — FlyRank AI",
+    when: "JUL — AUG 2026",
+    org: "Remote · 6-week selective cohort, interns across 130 countries",
+    bullets: [
+      "Built and optimised ML pipelines for production features at an AI-first startup automating brand visibility across classical and AI-native search engines.",
+    ],
+    skills: "PyTorch · Scikit-learn · Python · ML pipelines",
+  },
+  {
+    role: "Special Projects Intern — VAJRON Global Tech",
+    when: "MAY 2026 — PRESENT",
+    org: "Hybrid, Noida",
+    bullets: [
+      "Leading a cross-functional role across AI/ML, computer vision, and autonomous mechatronics on live projects spanning autonomous systems, intelligent monitoring, and embedded electronics.",
+    ],
+    skills: "YOLOv8 · ROS 2 · OpenCV · Drones · Mechatronics · Embedded systems",
+  },
+  {
+    role: "Autonomous Driving Intern — Team Defianz Racing, DTU SDC",
+    when: "JUL 2026 — PRESENT",
+    org: "Hybrid, Delhi",
+    bullets: ["Perception, path planning, and control for DTU's Formula Student Driverless platform."],
+  },
+  {
+    role: "Open-Source Contributor — GSSoC 2026, Open Source Track",
+    when: "MAY 2026 — PRESENT",
+    org: "Remote · GirlScript Summer of Code, JEC Jabalpur",
+    bullets: [
+      "Fixed 2 production bugs in Cognee (topoteretes/cognee), a widely adopted graph-based RAG framework.",
+      "Assigned issue #3390 — time- and usage-based memory decay semantics — after publishing an analysis of why unbounded agent memory drives context bloat and hallucination.",
+    ],
+    skills: "Python · Git · Cognee · Graph RAG · Open-source collaboration",
+  },
+  {
+    role: "Accelerator Programme Intern, Tech Track — SAE DTU (ForgeTrack)",
+    flag: "GRADUATED",
+    when: "JUN — AUG 2026",
+    org: "Remote",
+    bullets: [
+      "Completed the full 6-week accelerator; shipped 3 projects to GitHub with sustained commit history.",
+    ],
+  },
+  {
+    role: "Leadership — Co-Head, NeuralAI DTU · Founding Board Member, Spectrum DTU",
+    when: "JUL 2026 — PRESENT",
+    org: "DTU · AI/ML society · 5G/6G research society",
+    bullets: [
+      "Co-leading DTU's artificial intelligence and machine learning society; founding board of its 5G/6G research and development society on the IRS/RIS track.",
+      "Google Developer Program — completed the Agent Development Kit masterclass on agents with persistent memory and tool use. Junior Manager, Marketing — AIESEC in India.",
+    ],
+  },
+];
+
+/* ── PROJECTS ──────────────────────────────────────────────────────────── */
+
+export type ProjectTag = "robotics" | "ml" | "agents" | "systems";
+
+export type Project = {
+  name: string;
+  badge?: string;
+  tags: ProjectTag[];
+  body: string;
+  stack: string[];
+  href?: string;
+};
+
+export const projectFilters: { id: ProjectTag | "all"; label: string }[] = [
+  { id: "all", label: "All" },
+  { id: "robotics", label: "Robotics & Autonomy" },
+  { id: "ml", label: "Applied ML" },
+  { id: "agents", label: "Multi-Agent" },
+  { id: "systems", label: "Systems & Web" },
+];
+
+export const projects: Project[] = [
+  {
+    name: "AeroGuard AI",
+    badge: "DEFENCE",
+    tags: ["robotics", "ml"],
+    body: "Tactical drone-swarm surveillance system built at DTU for the Indian Military. Real-time collision avoidance, persistent multi-target tracking across a shared swarm vision network, and Munkres assignment for tactical resource allocation across 6 integrated sub-systems.",
+    stack: ["MATLAB", "DWA", "DeepSORT", "Kalman", "Hungarian", "YOLOv8"],
+  },
+  {
+    name: "LUNA-SITE",
+    badge: "ISRO BAH 2026",
+    tags: ["robotics", "ml"],
+    body: "Autonomous south-polar ice detection and landing-site selection for Chandrayaan-4. Stokes-vector physics features, physics-regularised CNN with Grad-CAM and MC dropout, DFSAR CPR/DOP ice gate, NSGA-II Pareto optimiser, and a Bekker-terramechanics RRT* traverse planner.",
+    stack: ["PyTorch", "NSGA-II", "RRT*", "Grad-CAM", "Streamlit"],
+  },
+  {
+    name: "F1 Path Planning",
+    badge: "SUPERHUMAN LAP",
+    tags: ["robotics", "ml"],
+    body: "Hybrid autonomous racing stack. Behavioural cloning on real F1 telemetry plus PPO fine-tuning, Delaunay-triangulation track reconstruction, and a minimum-curvature racing line solved in OSQP — 46.85 s against a 47.30 s expert reference at a 0% collision rate.",
+    stack: ["PPO", "OSQP", "Delaunay", "ROS 2", "Gazebo"],
+    href: "https://github.com/Rishiii2/F1-PATH-PLANNING",
+  },
+  {
+    name: "Tactical Aerial Combat Simulator",
+    tags: ["robotics"],
+    body: "Multi-agent drone-swarm simulation with Kalman filtering, DeepSORT, Hungarian assignment, ORCA collision avoidance, visual servoing, and dual-drone YOLO hazard mapping. Ported to an 18-file ROS 2 package for Humble with ArduPilot SITL.",
+    stack: ["MATLAB", "ROS 2", "ArduPilot SITL", "ORCA"],
+    href: "https://github.com/Rishiii2/Tactical_Aerial_Combat_Simulator",
+  },
+  {
+    name: "mercury — Autonomous Rover",
+    badge: "ICMTC UGVC-2026",
+    tags: ["robotics", "ml"],
+    body: "Full autonomy stack for UGV-DTU: YOLOv8 lane and pothole detection, behavioural cloning via EfficientNet-B0, an AI costmap bridge into Nav2, and a closed-loop Gazebo Harmonic world.",
+    stack: ["YOLOv8", "EfficientNet-B0", "Nav2", "Gazebo Harmonic"],
+    href: "https://github.com/Rishiii2/mercury",
+  },
+  {
+    name: "Biomass Prediction — Multimodal + LTN",
+    tags: ["ml"],
+    body: "Multi-modal deep learning over imagery and agronomic tabular metadata, with Logical Tensor Networks enforcing 5 biological fuzzy axioms at a satisfaction level of 0.950. Conducted under an AIMS-DTU internship.",
+    stack: ["PyTorch", "Logical Tensor Networks", "EfficientNet-B0"],
+  },
+  {
+    name: "Lore",
+    badge: "COGNEE × WEMAKEDEVS",
+    tags: ["agents", "systems"],
+    body: "Institutional memory for engineering teams, automatically. A knowledge engine on Cognee graph memory that surfaces the reasoning behind past engineering decisions, with animated multi-hop traversal over a rendered decision graph.",
+    stack: ["Cognee", "Graph RAG", "Cytoscape.js", "Python"],
+  },
+  {
+    name: "Multi-Modal Insurance Claim Verifier",
+    badge: "24 HOURS",
+    tags: ["agents", "ml"],
+    body: "Four-agent orchestration system — vision, NLP, risk, aggregator — verifying claims end to end, with forensic EXIF manipulation detection, Laplacian-variance blur gating, and progressive-zoom VLM triggers before model inference.",
+    stack: ["PyTorch", "Multi-agent", "Vision", "NLP"],
+  },
+  {
+    name: "LifeRPG",
+    badge: "AGENTS OF SIGNOZ",
+    tags: ["agents", "systems"],
+    body: "An observable AI game master. Agent-driven habit system instrumented end to end with OpenTelemetry and SigNoz, so every model decision is traceable and fully debuggable rather than a black box.",
+    stack: ["OpenTelemetry", "SigNoz", "LLM agents", "Python"],
+  },
+  {
+    name: "Operation MINT",
+    badge: "OPERATION CIPHER",
+    tags: ["agents", "ml"],
+    body: "Money Heist-themed five-agent drug-discovery pipeline: a PyTorch MLP toxicity classifier over RDKit Morgan fingerprints on the Stanford ClinTox dataset, plus protein–protein interaction network analysis.",
+    stack: ["PyTorch", "RDKit", "BioGRID", "STRING"],
+  },
+  {
+    name: "FIFA Nexus",
+    badge: "PROMPTWARS",
+    tags: ["agents"],
+    body: "Multi-agent generative-AI platform moving large-scale stadium operations from reactive to proactive operational intelligence. Built for Google for Developers × Hack2Skill.",
+    stack: ["Multi-agent GenAI", "Python"],
+  },
+  {
+    name: "KarigarConnect",
+    badge: "TOP 10 / 1,000+",
+    tags: ["agents", "systems"],
+    body: "AI-powered creator–brand matchmaking platform connecting rural artisans to the creator economy: creator discovery, campaign forecasting, outreach automation, and revenue optimisation.",
+    stack: ["AI matchmaking", "Forecasting", "Full-stack"],
+  },
+  {
+    name: "Real-Time UAV Telemetry & Command",
+    tags: ["robotics", "systems"],
+    body: "Live UAV telemetry and command interface streaming vehicle state and control over WebSocket and MAVLink.",
+    stack: ["JavaScript", "WebSocket", "MAVLink"],
+    href: "https://github.com/Rishiii2/Real-time_UAV_Telemetry_Command",
+  },
+  {
+    name: "Autonomous ROS 2 Waypoint Navigator",
+    tags: ["robotics"],
+    body: "Autonomous robot in ROS 2 and Gazebo performing waypoint navigation with full Nav2 stack integration. Paired with a separate ROS 2 Jazzy drone-swarm simulation package for Ubuntu 24.",
+    stack: ["ROS 2 Jazzy", "Nav2", "Gazebo", "ArduPilot"],
+    href: "https://github.com/Rishiii2/Autonomous_ROS2_Waypoint_Navigator",
+  },
+  {
+    name: "Enterprise Campus Operating System",
+    tags: ["systems"],
+    body: "Full-stack platform consolidating university events, clubs, and services into a single marketplace and calendar.",
+    stack: ["JavaScript", "Node.js", "Full-stack"],
+    href: "https://github.com/Rishiii2/Enterprise_Campus_Operating_System",
+  },
+  {
+    name: "Space to Earth Matrix",
+    badge: "FOSSEE · IIT BOMBAY",
+    tags: ["ml", "systems"],
+    body: "AI-driven siting for renewable-energy infrastructure across India, built for the IIT Bombay FOSSEE Mapathon.",
+    stack: ["Geospatial AI", "Python"],
+  },
+];
+
+/* ── HACKATHONS ────────────────────────────────────────────────────────── */
+
+export type Hackathon = { name: string; win?: string; detail: string; when: string };
+
+export const hackathons: Hackathon[] = [
+  {
+    name: "Bharatiya Antariksh Hackathon 2026 — ISRO",
+    detail: "National level · Team LUNA-SITE · PS 8: autonomous lunar ice detection for Chandrayaan-4",
+    when: "JUN 2026",
   },
   {
     name: "Hackfluence 2026",
-    subtitle: "Team House Targaryen · Codebenders",
-    desc: "Finished Top 10 in category among all participating teams.",
-    date: "Jun 2026",
-    badge: "🥇 Top 10",
+    win: "— Top 10 of 1,000+ teams, 4,000+ participants",
+    detail: "Team House Targaryen · KarigarConnect, AI creator–brand matchmaking for rural artisan commerce",
+    when: "JUN 2026",
   },
   {
-    name: "INDIA RUNS — Data & AI Challenge + Ideathon",
-    subtitle: "Team Type-2 · Resume Challenge: 10/10",
-    desc: "Dual-track participation. Perfect 10/10 score on the Resume Challenge.",
-    date: "Jun 2026",
-    badge: "✅ 10/10",
+    name: "Emerging Technologies Hackathon 2026 — TCOE India",
+    detail: "National level, competed solo · Dept. of Telecommunications, Ministry of Communications",
+    when: "JUL 2026",
   },
   {
-    name: "Operation Cipher 2026 — Operation MINT",
-    subtitle: "Money Heist themed 5-agent drug discovery pipeline",
-    desc: "PyTorch MLP, RDKit fingerprints, Stanford ClinTox, BioGRID PPI.",
-    date: "Jun 2026",
+    name: "Agents of SigNoz — SigNoz × WeMakeDevs",
+    detail: "LifeRPG, an observable AI game master instrumented with OpenTelemetry · $20K prize pool",
+    when: "JUL 2026",
+  },
+  {
+    name: "PromptWars — Google for Developers × Hack2Skill",
+    detail: "FIFA Nexus, multi-agent generative AI for stadium operations",
+    when: "JUL 2026",
+  },
+  {
+    name: "The Hangover Part II — WeMakeDevs × Cognee",
+    detail: "Team Tarot Club · Built Lore and fixed 2 bugs in the Cognee open-source repository during the event",
+    when: "JUN 2026",
+  },
+  {
+    name: "Operation Cipher 2026: The Innovation Heist — TechZen × Unstop",
+    detail: "National level · Operation MINT, a five-agent AI drug-discovery pipeline",
+    when: "JUN 2026",
+  },
+  {
+    name: "HackerRank Orchestrate — 24-hour hackathon",
+    detail: "Multi-modal insurance-claim verification agent, architected and deployed within 24 hours",
+    when: "JUN 2026",
+  },
+  {
+    name: "IIT Bombay FOSSEE Mapathon",
+    detail: "Space to Earth Matrix — AI-driven renewable-energy siting across India",
+    when: "2026",
   },
   {
     name: "HackerRank Code Autopsy",
-    subtitle: "Competitive Code Debugging",
-    desc: "Systematic debugging challenge under time pressure.",
-    date: "Jun 2026",
+    detail: "Competitive debugging · Systematic root-cause analysis under time pressure",
+    when: "JUN 2026",
   },
   {
-    name: "ForgeTrack 2026 — SAE DTU Tech Track",
-    subtitle: "Weeks 1–3 Completed",
-    desc: "CLI tools, Weather/AQI dashboard, and Gemini API study assistant.",
-    date: "2026",
+    name: "INDIA RUNS — Data & AI Challenge + Ideathon",
+    detail: "Team Type-2 · Dual-track participation",
+    when: "JUN 2026",
   },
 ];
 
-export const education = [
+/* ── STACK ─────────────────────────────────────────────────────────────── */
+
+export type SkillGroup = { category: string; hot?: string; items: string[] };
+
+export const skills: SkillGroup[] = [
+  { category: "Languages", hot: "Python", items: ["C++", "MATLAB", "JavaScript", "TypeScript", "Bash", "LaTeX"] },
   {
-    degree: "B.Tech — Engineering Physics",
-    inst: "Delhi Technological University (DTU)",
-    period: "2024 – 2028",
-    note: "1st Year",
-    gpa: null,
+    category: "AI / Machine Learning",
+    hot: "PyTorch",
+    items: ["TensorFlow", "Scikit-learn", "PPO", "Behavioural cloning", "YOLOv8", "EfficientNet-B0", "OpenCV", "RDKit", "Hugging Face", "Logical Tensor Networks", "Graph RAG"],
   },
   {
-    degree: "Class 12th — Mathematics & Biology",
-    inst: "LBS Kota",
-    period: "2022 – 2024",
-    gpa: "85%",
-    note: null,
+    category: "Robotics & Autonomy",
+    hot: "ROS 2 (Humble / Jazzy)",
+    items: ["Gazebo Harmonic", "ArduPilot SITL", "Nav2", "URDF / Xacro", "RViz", "ORCA", "DWA", "DeepSORT", "Kalman filtering", "MAVLink"],
   },
   {
-    degree: "Class 10th — Mathematics",
-    inst: "Podar International School, India",
-    period: "2017 – 2022",
-    gpa: "85%",
-    note: "Benstalk Olympiad State-Level Topper · Inter-house winner: Debate, Drama, Dance · Ventus House",
+    category: "Wireless & 5G",
+    hot: "IRS / RIS",
+    items: ["BD-RIS", "STAR-RIS", "ISAC", "O-RAN xApp", "SWIPT", "NTN", "OFDM", "MUSIC algorithm", "Beamforming", "Cascaded channel modelling"],
+  },
+  {
+    category: "Numerical & Optimisation",
+    items: ["Quadratic programming (OSQP)", "NSGA-II", "RRT*", "Semidefinite relaxation", "ADMM", "Delaunay triangulation", "SciPy"],
+  },
+  {
+    category: "MLOps, Cloud & Hardware",
+    items: ["Microsoft Azure", "Docker", "Git", "Weights & Biases", "SigNoz / OpenTelemetry", "Streamlit", "Linux", "NVIDIA Jetson Nano", "ESP32", "Raspberry Pi", "KiCad"],
   },
 ];
 
-export const certifications = [
-  { name: "Deep Learning Specialization (5-course)", issuer: "DeepLearning.AI", date: "Jun 2026" },
-  { name: "Neural Networks & Deep Learning",          issuer: "DeepLearning.AI", date: "Jun 2026" },
-  { name: "Convolutional Neural Networks",            issuer: "DeepLearning.AI", date: "Jun 2026" },
-  { name: "Sequence Models",                          issuer: "DeepLearning.AI", date: "Jun 2026" },
-  { name: "Improving Deep Neural Networks",           issuer: "DeepLearning.AI", date: "Jun 2026" },
-  { name: "Structuring ML Projects",                  issuer: "DeepLearning.AI", date: "Jun 2026" },
-  { name: "Google AI Essentials Specialization",      issuer: "Google / Coursera", date: "Jun 2026" },
-  { name: "Introduction to AI",                       issuer: "Google", date: "Jun 2026" },
-  { name: "Stay Ahead of the AI Curve",               issuer: "Google", date: "Jun 2026" },
-  { name: "Use AI Responsibly",                       issuer: "Google", date: "Jun 2026" },
-  { name: "Discover the Art of Prompting",            issuer: "Google", date: "Jun 2026" },
-  { name: "Start Writing Prompts like a Pro",         issuer: "Google", date: "Jun 2026" },
-  { name: "Use AI as a Creative or Expert Partner",   issuer: "Google", date: "Jun 2026" },
-  { name: "Google Prompting Essentials",              issuer: "Google", date: "Jun 2026" },
-  { name: "Maximize Productivity With AI Tools",      issuer: "Google", date: "Jun 2026" },
-  { name: "Getting Started with AI on Jetson Nano",   issuer: "NVIDIA DLI", date: "Jun 2026" },
-  { name: "Microsoft Azure Administrator",            issuer: "Microsoft", date: "Jun 2026" },
-  { name: "HackerRank Orchestrate: AI Agent Arch.",   issuer: "HackerRank", date: "Jun 2026" },
-  { name: "Intermediate Machine Learning",            issuer: "Kaggle", date: "Oct 2025" },
-  { name: "Tata Data Visualisation Simulation",       issuer: "Forage", date: "Jun 2026" },
-  { name: "Tata GenAI Data Analytics Simulation",     issuer: "Forage", date: "Jun 2026" },
-  { name: "Tata Cybersecurity Analyst Simulation",    issuer: "Forage", date: "Jun 2026" },
-  { name: "Tata ESG Job Simulation",                  issuer: "Forage", date: "Jun 2026" },
-  { name: "Growth & Operation Certificate",           issuer: "SPARKIIT + AWS", date: "Jun 2026" },
-  { name: "5G Lab Internship — Ranked 3rd",           issuer: "DTU", date: "Jun 2026" },
-  { name: "PCB Design & Workshop",                    issuer: "DTU", date: "May 2026" },
-  { name: "Campus Ambassador",                        issuer: "IIT Kharagpur", date: "May 2026" },
-  { name: "INDIA RUNS Resume Challenge — 10/10",      issuer: "INDIA RUNS", date: "Jun 2026" },
-  { name: "Hackfluence 2026 — Top 10",                issuer: "Codebenders", date: "Jun 2026" },
+export type Certification = { name: string; issuer: string };
+
+export const certifications: Certification[] = [
+  { name: "Machine Learning Specialization", issuer: "Stanford Online & DeepLearning.AI · Andrew Ng" },
+  { name: "Deep Learning Specialization", issuer: "DeepLearning.AI · 5 courses" },
+  { name: "AI Fluency: Framework & Foundations", issuer: "Anthropic Academy · all 20 modules" },
+  { name: "Azure Administrator", issuer: "Microsoft Certified" },
+  { name: "Agentic AI Business Solutions", issuer: "Microsoft Certified" },
+  { name: "Getting Started with AI on Jetson Nano", issuer: "NVIDIA Deep Learning Institute" },
+  { name: "Google AI Essentials Specialization", issuer: "Google · 5 courses" },
+  { name: "Google Prompting Essentials", issuer: "Google" },
+  { name: "Intermediate Machine Learning", issuer: "Kaggle" },
+  { name: "Certificate of Merit — 5G and Beyond", issuer: "DoT 5G Use Case Lab, DTU · 3rd, quiz" },
+  { name: "Electronic Circuit Design, Fabrication & Testing", issuer: "DTU, ECE Department · rated Excellent" },
+  { name: "Certificate of Excellence — Student Ambassador", issuer: "1stop.ai × Kshitij, IIT Kharagpur" },
+  { name: "Orchestrate: AI Agent Architecture", issuer: "HackerRank" },
 ];
 
-export const arts = [
-  { icon: "🎸", title: "Guitar & Flute", desc: "Fluent in both; self-taught across classical and contemporary styles." },
-  { icon: "♟", title: "Chess", desc: "Competitive player on Chess.com (rishiiii001). Strong tactical and positional play." },
-  { icon: "☕", title: "Coffee Painting", desc: "Experimental visual art using coffee as medium; exploring texture and tone." },
-  { icon: "✏️", title: "Sketching", desc: "Strong eye for colour theory, palette composition, and spatial proportion." },
-  { icon: "📚", title: "Reading", desc: "Philosophy, science fiction, and technical non-fiction. Always in a book." },
-  { icon: "🏃", title: "Athletics", desc: "Inter-house track events at Podar International School. Won multiple competitions." },
-  { icon: "🎭", title: "Performing Arts", desc: "Drama and dance wins at inter-KV and inter-house levels." },
-  { icon: "🧩", title: "Competitive Programming", desc: "LeetCode, AlgoRave DTU, Olympiad mathematics — love the puzzle." },
+export const totalCertifications = 29;
+
+/* ── WRITING ───────────────────────────────────────────────────────────── */
+
+export type Post = { title: string; meta: string };
+
+export const posts: Post[] = [
+  { title: "Building LifeRPG: The Observable AI Game Master with SigNoz and OpenTelemetry", meta: "JUL 25 · 9 MIN" },
+  { title: "Space to Earth Matrix: Revolutionizing Renewable Energy Placement with AI", meta: "JUL 14 · 5 MIN" },
+  { title: "From Pixels to Topology: The Evolution of Autonomous Drone Vision", meta: "JUL 08 · 4 MIN" },
+  { title: "The NGT-SSM Architecture: Shattering the Pixel Paradigm", meta: "JUL 08 · 5 MIN" },
+  { title: "Beyond Pixels: Simulating Physical Reality at the Edge", meta: "JUL 08 · 5 MIN" },
+  { title: "AeroGuard AI: Transcending Convolutional Architectures in Drone Surveillance", meta: "JUL 08 · 6 MIN" },
+  { title: "Building FIFA Nexus: An Autonomous Multi-Agent AI System for Stadium Operations", meta: "JUL 06 · 4 MIN" },
+  { title: "Intelligent Reflecting Surfaces: Scaling Massive MIMO with True Physics Simulation", meta: "JUL 06 · 5 MIN" },
+  { title: "Revolutionizing 5G Networks with RIS and Deep Reinforcement Learning", meta: "JUL 03 · 8 MIN" },
+];
+
+export const totalPosts = 36;
+
+/* ── EDUCATION & INTERESTS ─────────────────────────────────────────────── */
+
+export type Education = { what: string; when: string; note?: string };
+
+export const education: Education[] = [
+  {
+    what: "B.Tech, Engineering Physics — Delhi Technological University",
+    when: "2025 – 2029",
+    note: "Delhi, India · Formerly Delhi College of Engineering",
+  },
+  { what: "Class XII, Mathematics & Biology — LBS Kota", when: "2024" },
+  { what: "Class X — Podar International School", when: "2022", note: "Benstalk Olympiad State-Level Topper" },
+];
+
+export const interests: string[] = [
+  "Guitar and flute, self-taught",
+  "Competitive chess",
+  "Coffee painting and sketching",
+  "Philosophy and science fiction",
 ];
